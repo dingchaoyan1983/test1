@@ -1,0 +1,10 @@
+.QQInput {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  font-size: 20px;
+}
+
+.QueryInput {
+  margin-bottom: 10px;
+}

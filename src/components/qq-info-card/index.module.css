@@ -1,0 +1,19 @@
+.Root {
+  border: 1px solid black;
+  border-radius: 4px;
+  display: inline-flex;
+  padding: 10px;
+  align-items: center;
+  text-align: initial;
+}
+
+.Avatar {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-right: 10px;
+}
+
+.No {
+  color: #555;
+}
