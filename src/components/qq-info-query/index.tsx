@@ -2,7 +2,9 @@ import React, {
   useCallback,
   useState,
 } from 'react';
+import { BounceLoader } from "react-spinners";
 import QQInfoCard from '../qq-info-card';
+import Error from '../error';
 import styles from './index.module.css';
 import {
   OnChangeFuncType,
@@ -12,6 +14,7 @@ import { useQQInfo } from '../../hooks';
 const QQInfoQuery: React.FC = () => {
   const [qq, setQQ] = useState<string>('');
   const onChangeQQ = useCallback<OnChangeFuncType>((e) => {
+    console.log(e.target.value);
     setQQ(e.target.value);
   }, []);
   const {
@@ -28,7 +31,7 @@ const QQInfoQuery: React.FC = () => {
       </form>
       {
         loading
-        ? 'loading'
+        ? <BounceLoader loading={loading} color="#0170fe" size={50} />
         : (
           <>
             {
@@ -41,7 +44,7 @@ const QQInfoQuery: React.FC = () => {
               )
             }
             {
-              error && error.toString()
+              error && <Error error={error} />
             }
           </>
         )
